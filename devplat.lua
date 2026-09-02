@@ -70,7 +70,7 @@ return {
                 ["B"] = false,
                 ["C"] = true,
                 ["D"] = "0.736.0.7361348",
-                ["E"] = false,
+                ["E"] = true,
                 ["F"] = false,
                 ["G"] = true,
                 ["H"] = true,
