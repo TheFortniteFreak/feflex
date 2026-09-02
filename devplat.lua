@@ -1,3 +1,25 @@
+--[[INFO
+local deviceInfo = {
+            vr flag
+            ["A"] = UserInputService.VREnabled,
+            console flag
+            ["B"] = isTenFootInterface(GuiService),
+            windows flag
+            ["C"] = GuiService.IsWindows,
+            version
+            ["D"] = getfenv().version(),
+            gyro flag
+            ["E"] = UserInputService.GyroscopeEnabled or UserInputService.AccelerometerEnabled,
+            touch screen falg
+            ["F"] = UserInputService.TouchEnabled,
+            keyboard flag
+            ["G"] = UserInputService.KeyboardEnabled,
+            mouse flag
+            ["H"] = UserInputService.MouseEnabled,
+            apple exlusive emoji flag
+            ["I"] = TextService:getTextSize(utf8.char(65535), 16, Enum.Font.SourceSans, Vector2.one * 1000) ~= TextService:getTextSize(utf8.char(63743), 16, Enum.Font.SourceSans, Vector2.one * 1000)
+        }
+]]
 return {
             ["Windows"] = {
                 ["A"] = false,
