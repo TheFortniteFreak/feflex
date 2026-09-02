@@ -41,7 +41,7 @@ return {
                 ["F"] = false,
                 ["G"] = true,
                 ["H"] = true,
-                ["I"] = false
+                ["I"] = true
             },
             ["MacOS"] = {
                 ["A"] = false,
