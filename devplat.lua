@@ -10,7 +10,7 @@ local deviceInfo = {
             ["D"] = getfenv().version(),
             gyro flag
             ["E"] = UserInputService.GyroscopeEnabled or UserInputService.AccelerometerEnabled,
-            touch screen falg
+            touch screen flag
             ["F"] = UserInputService.TouchEnabled,
             keyboard flag
             ["G"] = UserInputService.KeyboardEnabled,
