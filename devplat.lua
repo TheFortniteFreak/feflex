@@ -20,12 +20,18 @@ local deviceInfo = {
             ["I"] = TextService:getTextSize(utf8.char(65535), 16, Enum.Font.SourceSans, Vector2.one * 1000) ~= TextService:getTextSize(utf8.char(63743), 16, Enum.Font.SourceSans, Vector2.one * 1000)
         }
 ]]
+local JSON = game:GetService("HttpService")
+local data = JSON:JSONDecode(game:HttpGet("https://weao.xyz/api/versions/current"))
+local win = data["WindowsResponse"]["version"]
+local mac = data["MacResponse"]["version"]
+local ios = data["iOSResponse"]["version"]
+local android = data["AndroidResponse"]["version"]
 return {
             ["Windows"] = {
                 ["A"] = false,
                 ["B"] = false,
                 ["C"] = true,
-                ["D"] = "0.736.0.7361348",
+                ["D"] = win,
                 ["E"] = false,
                 ["F"] = false,
                 ["G"] = true,
@@ -36,7 +42,7 @@ return {
                 ["A"] = false,
                 ["B"] = false,
                 ["C"] = false,
-                ["D"] = "2.735.1138",
+                ["D"] = android,
                 ["E"] = false,
                 ["F"] = false,
                 ["G"] = true,
@@ -47,7 +53,7 @@ return {
                 ["A"] = false,
                 ["B"] = false,
                 ["C"] = false,
-                ["D"] = "0.736.0.7361348",
+                ["D"] = mac,
                 ["E"] = false,
                 ["F"] = false,
                 ["G"] = true,
@@ -58,7 +64,7 @@ return {
                 ["A"] = false,
                 ["B"] = false,
                 ["C"] = false,
-                ["D"] = "2.735.1138",
+                ["D"] = android,
                 ["E"] = true,
                 ["F"] = true,
                 ["G"] = false,
@@ -69,7 +75,7 @@ return {
                 ["A"] = true,
                 ["B"] = false,
                 ["C"] = true,
-                ["D"] = "0.736.0.7361348",
+                ["D"] = win,
                 ["E"] = true,
                 ["F"] = false,
                 ["G"] = true,
@@ -80,7 +86,7 @@ return {
                 ["A"] = false,
                 ["B"] = true,
                 ["C"] = false,
-                ["D"] = "0.736.0.7361348",
+                ["D"] = win,
                 ["E"] = false,
                 ["F"] = false,
                 ["G"] = true,
@@ -91,7 +97,7 @@ return {
                 ["A"] = false,
                 ["B"] = false,
                 ["C"] = false,
-                ["D"] = "2.735.1138",
+                ["D"] = ios,
                 ["E"] = false,
                 ["F"] = true,
                 ["G"] = false,
