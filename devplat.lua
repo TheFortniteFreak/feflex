@@ -1,31 +1,32 @@
 --[[INFO
 local deviceInfo = {
             vr flag
-            ["A"] = UserInputService.VREnabled,
+            ["A"] = UserInputService.VREnabled,
             console flag
-            ["B"] = isTenFootInterface(GuiService),
+            ["B"] = isTenFootInterface(GuiService),
             windows flag
-            ["C"] = GuiService.IsWindows,
+            ["C"] = GuiService.IsWindows,
             version
-            ["D"] = getfenv().version(),
+            ["D"] = getfenv().version(),
             gyro flag
-            ["E"] = UserInputService.GyroscopeEnabled or UserInputService.AccelerometerEnabled,
+            ["E"] = UserInputService.GyroscopeEnabled or UserInputService.AccelerometerEnabled,
             touch screen flag
-            ["F"] = UserInputService.TouchEnabled,
+            ["F"] = UserInputService.TouchEnabled,
             keyboard flag
-            ["G"] = UserInputService.KeyboardEnabled,
+            ["G"] = UserInputService.KeyboardEnabled,
             mouse flag
-            ["H"] = UserInputService.MouseEnabled,
+            ["H"] = UserInputService.MouseEnabled,
             apple exlusive emoji flag
-            ["I"] = TextService:getTextSize(utf8.char(65535), 16, Enum.Font.SourceSans, Vector2.one * 1000) ~= TextService:getTextSize(utf8.char(63743), 16, Enum.Font.SourceSans, Vector2.one * 1000)
-        }
+            ["I"] = TextService:getTextSize(utf8.char(65535), 16, Enum.Font.SourceSans, Vector2.one * 1000) ~= TextService:getTextSize(utf8.char(63743), 16, Enum.Font.SourceSans, Vector2.one * 1000)
+        }
 ]]
 local JSON = game:GetService("HttpService")
-local data = JSON:JSONDecode(game:HttpGet("https://weao.xyz/api/versions/current"))
-local win = data["WindowsResponse"]["version"]
-local mac = data["MacResponse"]["version"]
-local ios = data["iOSResponse"]["version"]
-local android = data["AndroidResponse"]["version"]
+local response = game:HttpGet("https://weao.xyz/api/versions/current")
+local data = response and JSON:JSONDecode(response) 
+local win = response and data["WindowsResponse"]["version"] or "0.748.0.7481526"
+local mac = response and data["MacResponse"]["version"] or "0.748.0.7481526"
+local ios = response and data["iOSResponse"]["version"] or "2.748.1526"
+local android = response and data["AndroidResponse"]["version"] or "2.748.1526"
 return {
             ["Windows"] = {
                 ["A"] = false,
